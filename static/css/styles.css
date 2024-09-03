@@ -4,7 +4,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #333;
+    color: #fff; /* Changed to white */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li, a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    color: #333;
+    color: #fff;
 }
 
 a, .btn {
@@ -79,38 +79,72 @@ a:hover, .btn:hover {
     transition: all 0.4s ease;
     box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
 }
-
 .btn-primary:hover {
     background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
     box-shadow: 0 15px 20px rgba(0, 123, 255, 0.4);
     transform: translateY(-3px);
 }
-/* Centraliza o conteúdo verticalmente e horizontalmente */
-/* Centraliza o conteúdo verticalmente e horizontalmente */
 .hero {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; 
     align-items: center;
-    height: 100vh; /* Ocupa 100% da altura da viewport */
+    margin: 0;
+    padding: 0;
     text-align: center;
-    padding: 20px;
-    flex-direction: column; /* Para empilhar o texto e o botão */
 }
-
 .hero-content {
-    max-width: 800px; /* Ajuste o tamanho máximo do conteúdo */
+    max-width: 800px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 40px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 0; /* Remover margens */
+    position: relative;
+    top: 0; /* Garantir que esteja no topo */
 }
-
 .hero h1 {
     margin-bottom: 20px; /* Espaçamento entre o título e o botão */
 }
-
 .hero p {
     margin-bottom: 30px; /* Espaçamento entre a descrição e o botão */
 }
-
+.btn-primary {
+    padding: 15px 30px; /* Ajuste de padding para o botão */
+}
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .cursor-hover {
+    transform: scale(1.5);
+  }
+  
+  .cursor-hover::after {
+    transform: scale(1.5);
+  }

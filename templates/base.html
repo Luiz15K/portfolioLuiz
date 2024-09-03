@@ -62,7 +62,82 @@
                 appearOnScroll.observe(fader);
             });
         });
+    
     </script>
+    <script>
+      
+        const cursor = document.createElement('div');      
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+        const cursorHover = () => {
+          cursor.classList.add('cursor-hover');
+      
+        };
+      
+      
+        const cursorUnhover = () => {
+      
+          cursor.classList.remove('cursor-hover');
+      
+        };
+      
+      
+        // Add event listeners to track the mouse position
+      
+        document.addEventListener('mousemove', (e) => {
+      
+          const x = e.clientX;
+      
+          const y = e.clientY;
+      
+          cursor.style.top = `${y}px`;
+      
+          cursor.style.left = `${x}px`;
+      
+        });
+      
+      
+        // Add event listeners to hover and unhover elements
+      
+        document.addEventListener('mouseover', (e) => {
+      
+          if (e.target.tagName !== 'BODY') {
+      
+            cursorHover();
+      
+          }
+      
+        });
+      
+      
+        document.addEventListener('mouseout', (e) => {
+      
+          if (e.target.tagName !== 'BODY') {
+      
+            cursorUnhover();
+      
+          }
+      
+        });
+      
+      
+        // Add event listeners to hover and unhover links
+      
+        document.querySelectorAll('a').forEach((link) => {
+      
+          link.addEventListener('mouseover', cursorHover);
+      
+          link.addEventListener('mouseout', cursorUnhover);
+      
+        });
+      
+      
+        document.querySelectorAll('button').forEach((button) => {
+          button.addEventListener('mouseover', cursorHover);
+          button.addEventListener('mouseout', cursorUnhover);
+        });
+      
+      </script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
