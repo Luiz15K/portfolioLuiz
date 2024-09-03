@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Projetos - Meu Portfólio{% endblock %}
+
+{% block content %}
+<div class="glass-container fade-in text-center">
+    <h2>Projetos Recentes</h2>
+    <p>Aqui estão alguns dos projetos mais significativos que desenvolvi recentemente.</p>
+</div>
+
+<div class="glass-container fade-in mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>Projeto 1</h3>
+                <p>Descrição breve do projeto 1 e suas funcionalidades.</p>
+                <p><strong>Tecnologias:</strong> Python, Flask, AWS</p>
+                <a class="btn btn-primary btn-sm" href="https://github.com/seuperfil/projeto1" target="_blank">Ver no GitHub</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="project-card">
+                <h3>Projeto 2</h3>
+                <p>Descrição breve do projeto 2 e suas funcionalidades.</p>
+                <p><strong>Tecnologias:</strong> JavaScript, React, Node.js</p>
+                <a class="btn btn-primary btn-sm" href="https://github.com/seuperfil/projeto2" target="_blank">Ver no GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
